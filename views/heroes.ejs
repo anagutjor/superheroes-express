@@ -1,5 +1,20 @@
 <%- include("partials/header") -%>
 
-<p>All heroes works</p>
+<div class="row">
+    <% heroes.forEach( hero => { %>
+    <div class="col-sm-4">
+        <div class="card animated fadeIn fast">
+            <img src="<%= hero.img %>" class="card-img-top img-fluid" alt="<%= hero.nombre %>">
+            <div class="card-body">
+            <h5 class="card-title"><%= hero.nombre %></h5>
+            <p class="card-text"><%= hero.bio.substring(0, 99) %></p>
+            <p class="card-text"><small class="text-muted"><%= hero.aparicion %></small></p>
+            </div>
+
+            <a class="btn btn-outline-primary m-4" href="/hero/<%= hero.nombre %>" role="button">Ver más...</a>
+        </div>
+    </div>
+    <% }) %>
+</div>
 
 <%- include("partials/footer") -%>

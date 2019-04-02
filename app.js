@@ -21,7 +21,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/heroes', (req, res) => {
-    res.render('heroes');
+    res.render('heroes', {heroes: heroesArr});
 })
 
 app.get('/hero/:name', (req, res) => {

@@ -1,14 +1,14 @@
 <%- include("partials/header") -%>
 
 <div class="card animated fadeIn fast">
+  <div class="col-sm-4">
     <img src="<%= hero.img %>" class="card-img-top img-fluid" alt="<%= hero.nombre %>">
-    <div class="card-body">
-      <h5 class="card-title"><%= hero.nombre %></h5>
-      <p class="card-text"><%= hero.bio %></p>
-      <p class="card-text"><small class="text-muted"> <%= hero.aparicion %> </small></p>
-    </div>
-
-    <button class="btn btn-outline-primary m-4">Ver más...</button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= hero.nombre %></h5>
+    <p class="card-text"><%= hero.bio %></p>
+    <p class="card-text"><small class="text-muted"> <%= hero.aparicion %> </small></p>
+  </div>
 </div>
 
 <%- include("partials/footer") -%>
