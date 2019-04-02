@@ -35,6 +35,14 @@ app.get('/hero/:name', (req, res) => {
     });
 })
 
+app.post('/search', (req, res) => {
+    let heroName = req.body.hero;
+    // capitalize first letter of name
+    heroName = heroName.charAt(0).toUpperCase() + heroName.slice(1);
+    console.log(heroName);
+    res.redirect(`hero/${heroName}`);
+})
+
 app.listen(3000, () => {
     console.log('Server running at port 3000');
 })
