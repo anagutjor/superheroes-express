@@ -36,9 +36,17 @@ app.get('/hero/:name', (req, res) => {
 })
 
 app.post('/search', (req, res) => {
-    let heroName = req.body.hero;
+    var heroName = req.body.hero;
     // capitalize first letter of name
-    heroName = heroName.charAt(0).toUpperCase() + heroName.slice(1);
+    // check if name is 'linterna verde' i.e. has some space character
+    if ( heroName.indexOf(' ') >= 0 ) {
+        let res = heroName.split(' ');
+        res = res.map( s => s.charAt(0).toUpperCase() + s.slice(1) );
+        console.log('res is ', res );
+        heroName = res.join(' ');
+    } else {
+        heroName = heroName.charAt(0).toUpperCase() + heroName.slice(1);
+    }
     console.log(heroName);
     res.redirect(`hero/${heroName}`);
 })
